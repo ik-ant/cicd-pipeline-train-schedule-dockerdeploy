@@ -9,9 +9,7 @@ pipeline {
             }
         }
           stage('Build Image') {
-            when {
-                branch 'master'
-            }
+       
             steps {
                 script {
                     app = docker.build("ikant3922/train-schedule")
@@ -22,9 +20,7 @@ pipeline {
             }
         }
         stage('Push Image') {
-            when {
-                branch 'master'
-            }
+          
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
@@ -35,9 +31,7 @@ pipeline {
             }
         }
 stage ('Deploy to staging') {
-    when {
-        branch 'master'
-    }
+  
     steps {
         withCredentials ([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
             script {
@@ -54,9 +48,7 @@ stage ('Deploy to staging') {
     }
 }
 stage ('Deploy to production') {
-    when {
-        branch 'master'
-    }
+  
     steps {
         input 'Deploy to Production ?'
         milestone(1)
