@@ -53,7 +53,7 @@ stage ('Deploy to staging') {
         }
     }
 }
-stage ('Deploy to production') {
+stage ('Deploy to production ?') {
     when {
         branch 'master'
     }
