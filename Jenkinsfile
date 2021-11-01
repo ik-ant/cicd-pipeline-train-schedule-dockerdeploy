@@ -50,7 +50,7 @@ stage ('Deploy to staging') {
 stage ('Deploy to production') {
   
     steps {
-        input 'Deploy to Production ?'
+        input 'Deploy to Production?'
         milestone(1)
         withCredentials ([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
             script {
