@@ -2,7 +2,7 @@
 
 This is a simple train schedule app written using nodejs. It is intended to be used as a sample application for a series of hands-on learning activities.
 
-## Running the app train1.3
+## Running the app train 1.5
 
 You need a Java JDK 7 or later to run the build. You can run the build like this:
 
